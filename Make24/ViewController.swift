@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var sideLeadingConstraint: NSLayoutConstraint!
     var isSlideWindownOpen : Bool = false
     
+    @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var textField: UILabel!
     @IBOutlet weak var successLabel: UILabel!
     @IBOutlet weak var attemptLabel: UILabel!
@@ -27,9 +28,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var doneButton: UIButton!
     
     var selectedNumButton = [UIButton]()
-    var attemptCount = 0
+    var attemptCount = 1
     var successCount = 0
     var failureCount = 0
+    
+    var time = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,16 +48,47 @@ class ViewController: UIViewController {
         
         //disable doneButton
         doneButton.isEnabled = false
+        
         //set textField as empty string
         textField.text = ""
-        //set counts labels
-        attemptLabel.text = "1"
-        successLabel.text = "0"
-        failedLabel.text = "0"
+        
+        //generate four random numbers
+        generateFourNumbers()
+        updateCounts(f: failureCount, s: successCount, a: attemptCount)
+        
+        //start timer
+        startTimer()
+        
     
+    }
+    
+    private func startTimer() {
+        time = 0
+        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(ViewController.timerResult), userInfo: nil, repeats: true)
+    }
+    
+    
+    @objc func timerResult() {
+        time += 1
+        let min = (time%3600) / 60
+        let sec = time % 60
+        if (min < 10 && sec < 10) {
+            timerLabel.text = "0\(min):0\(sec)"
+        } else if (sec < 10){
+             timerLabel.text = "\(min):0\(sec)"
+        } else if (min < 10){
+             timerLabel.text = "0\(min):\(sec)"
+        } else {
+             timerLabel.text = "\(min):\(sec)"
+        }
     }
 
     @IBAction func slideWindow(_ sender: UIBarButtonItem) {
+        sliding()
+      
+    }
+    
+    private func sliding() {
         if isSlideWindownOpen {
             sideLeadingConstraint.constant = -200
             UIView.animate(withDuration: 0.3, animations: {self.view.layoutIfNeeded()})
@@ -63,7 +97,6 @@ class ViewController: UIViewController {
             UIView.animate(withDuration: 0.3, animations: {self.view.layoutIfNeeded()})
         }
         isSlideWindownOpen = !isSlideWindownOpen
-      
     }
     //action method for operator buttons
     @IBAction func operatorButton(_ sender: UIButton) {
@@ -95,7 +128,7 @@ class ViewController: UIViewController {
             let lastChar = expression![expression!.index(before:expression!.endIndex)]
             expression!.remove(at: expression!.index(before:expression!.endIndex))
             for i in 0..<4 {
-                if (String(lastChar) == selectedNumButton[i].title(for: .normal)){
+                if (String(lastChar) == selectedNumButton[i].title(for: .normal) && !selectedNumButton[i].isEnabled){
                     selectedNumButton[i].isEnabled = true
                     break
                 }
@@ -123,11 +156,14 @@ class ViewController: UIViewController {
     //action method for skip icon in Action Bar
     @IBAction func skipPuzzle(_ sender: UIBarButtonItem) {
         //reset the timer
-        
-        //set counters as 0s
+        startTimer()
         
         //reassign new 4 random numbers
         generateFourNumbers()
+        
+        //update failureCount
+        failureCount += 1
+        updateCounts(f: failureCount, s: successCount, a: attemptCount)
     }
     
     private func generateFourNumbers() -> Void {
@@ -141,16 +177,14 @@ class ViewController: UIViewController {
         }
         textField.text = ""
         attemptCount = 1
-        attemptLabel.text = String(attemptCount)
         doneButton.isEnabled = false
-        //reset timer
-        
+        startTimer()
     }
    
     @IBAction func calculate(_ sender: UIButton) ->Void {
         let expression = textField.text
         attemptCount += 1
-        
+        print(expression!)
         if (checkValid(expression: expression!)) {
             guard let result = NSExpression(format: expression!).expressionValue(with: nil, context: nil) as? Double else {
                 return
@@ -159,14 +193,50 @@ class ViewController: UIViewController {
                 successCount += 1
                 attemptCount = 1
                 textField.text = ""
+                startTimer()
                 //show alert: "Bingo" + expression + "= 24"
+                let alert = UIAlertController(title:nil, message:"Bingo! \(expression!) = 24 ", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title:"Next Puzzle", style: .default, handler: { action in self.generateFourNumbers()}))
+                self.present(alert, animated: true)
                 }
         }else {
             print("try again")
-            //show snackbar for "please try again"
+            //show snackbar (alert) for "please try again"
+            let alert = UIAlertController(title:nil, message:"Incorrect. Please try again!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Try Again", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
         }
         doneButton.isEnabled = false
         updateCounts(f: failureCount, s: successCount, a: attemptCount)
+        
+    }
+    
+    @IBAction func showAnswer(_ sender: UIButton) {
+        var nums = [Int]()
+        for i in 0..<4 {
+            nums.append(Int(selectedNumButton[i].title(for: .normal)!)!)
+        }
+        let solution = getSolution(inputArray: nums)
+        var expression : String
+        if (solution != "") {
+            expression = "The correct answer is: \(solution)."
+        } else {
+            expression = "Sorry, there are actually no solutions."
+        }
+        let alert = UIAlertController(title:nil, message:"\(expression)", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title:"Next Puzzle", style: .default, handler: { action in
+            
+                    self.generateFourNumbers()
+                    self.failureCount += 1
+                    self.updateCounts(f: self.failureCount, s: self.successCount, a: self.attemptCount)
+            
+        }))
+        self.present(alert, animated: true)
+        //slide back navigation window
+        sliding()
+    }
+    
+    @IBAction func numberPick(_ sender: UIButton) {
         
     }
     

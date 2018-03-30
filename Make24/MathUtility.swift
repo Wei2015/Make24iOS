@@ -107,17 +107,20 @@ func checkValid(expression: String) -> Bool {
             if (lastNumIndex) {return false}
             isLeftOp = false
             isLeftPar = true
+            lastNumIndex = false
         } else if (current == ")") {
             if (parCount == 0) {return false}
             else { parCount -= 1}
             if (isLeftPar || isLeftOp) {return false}
             isLeftPar = true
             isLeftOp = false
+            lastNumIndex = false
         } else if (current == "-" || current == "+" || current == "*" || current == "/") {
             if (isLeftOp) {return false}
             if (isLeftPar && expression[expression.index(before:index)]=="(") {return false}
             isLeftOp = true
             isLeftPar = false
+            lastNumIndex = false
         } else {
             if (lastNumIndex) {return false}
             if (isLeftPar && expression[expression.index(before:index)]==")") {return false}

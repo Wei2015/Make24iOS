@@ -47,9 +47,12 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="QHP-cG-6pS"/>
+                                </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="XBb-KK-qmS">
-                                <rect key="frame" x="21.5" y="164" width="313.5" height="18"/>
+                                <rect key="frame" x="15" y="164" width="320" height="18"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Succeeded" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEd-xH-p8x">
                                         <rect key="frame" x="0.0" y="0.0" width="77.5" height="18"/>
@@ -58,30 +61,33 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3M-Ja-yub">
-                                        <rect key="frame" x="112.5" y="0.0" width="37.5" height="18"/>
+                                        <rect key="frame" x="114.5" y="0.0" width="37.5" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skipped" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfE-Yr-fV8">
-                                        <rect key="frame" x="185" y="0.0" width="56" height="18"/>
+                                        <rect key="frame" x="189.5" y="0.0" width="56" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KdN-uS-kDJ">
-                                        <rect key="frame" x="276" y="0.0" width="37.5" height="18"/>
+                                        <rect key="frame" x="282.5" y="0.0" width="37.5" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="KoK-lb-lec"/>
+                                </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9c-1p-UbT" customClass="DesignableLabel" customModule="Make24" customModuleProvider="target">
                                 <rect key="frame" x="15" y="242" width="320" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="TSi-7M-gJt"/>
-                                    <constraint firstAttribute="height" constant="40" id="zzJ-qX-rOW" userLabel="height = 80"/>
+                                    <constraint firstAttribute="height" constant="40" id="zzJ-qX-rOW" userLabel="height = 100"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
@@ -455,8 +461,8 @@
                                     <constraint firstAttribute="width" constant="320" id="6pr-pd-BZ2"/>
                                 </constraints>
                             </stackView>
-                            <view opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SJJ-Xu-9QL">
-                                <rect key="frame" x="-200" y="64" width="200" height="603"/>
+                            <view opaque="NO" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SJJ-Xu-9QL">
+                                <rect key="frame" x="0.0" y="64" width="200" height="603"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="PCy-Op-kn3">
                                         <rect key="frame" x="25" y="53" width="113" height="90"/>
@@ -464,10 +470,16 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oK-Tg-Yot">
                                                 <rect key="frame" x="0.0" y="0.0" width="63" height="30"/>
                                                 <state key="normal" title="Show Me"/>
+                                                <connections>
+                                                    <action selector="showAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pCo-OK-zNN"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRr-Q7-Psa">
                                                 <rect key="frame" x="0.0" y="60" width="113" height="30"/>
                                                 <state key="normal" title="Assign Numbers"/>
+                                                <connections>
+                                                    <action selector="numberPick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pp5-wl-ihN"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -539,6 +551,7 @@
                         <outlet property="successLabel" destination="G3M-Ja-yub" id="yGc-av-awM"/>
                         <outlet property="textField" destination="d9c-1p-UbT" id="8hK-Fe-0PT"/>
                         <outlet property="thirdNum" destination="DZ3-2o-Cdj" id="Nfy-Ar-bNQ"/>
+                        <outlet property="timerLabel" destination="Q1x-Sc-PC9" id="sBM-fa-VR0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
