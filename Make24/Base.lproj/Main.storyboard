@@ -28,7 +28,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="rHT-Ts-HWw">
-                                <rect key="frame" x="14.5" y="99" width="320.5" height="18.5"/>
+                                <rect key="frame" x="35" y="99" width="300" height="18.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fp-sa-fVg">
                                         <rect key="frame" x="0.0" y="0.0" width="38.5" height="18.5"/>
@@ -37,63 +37,64 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1x-Sc-PC9">
-                                        <rect key="frame" x="77.5" y="0.0" width="48.5" height="18.5"/>
+                                        <rect key="frame" x="71" y="0.0" width="48.5" height="18.5"/>
                                         <fontDescription key="fontDescription" name="CourierNewPS-BoldItalicMT" family="Courier New" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attempt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54v-Zx-60n">
-                                        <rect key="frame" x="165.5" y="0.0" width="67.5" height="18.5"/>
+                                        <rect key="frame" x="151.5" y="0.0" width="67.5" height="18.5"/>
                                         <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ha-Iy-yyR" userLabel="attempt Label">
-                                        <rect key="frame" x="272" y="0.0" width="48.5" height="18.5"/>
+                                        <rect key="frame" x="251.5" y="0.0" width="48.5" height="18.5"/>
                                         <fontDescription key="fontDescription" name="CourierNewPS-BoldItalicMT" family="Courier New" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="QHP-cG-6pS"/>
+                                    <constraint firstAttribute="width" constant="300" id="fl4-nD-GwB"/>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XBb-KK-qmS">
-                                <rect key="frame" x="15" y="164.5" width="320" height="18.5"/>
+                                <rect key="frame" x="35" y="164.5" width="300" height="18.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Succeeded" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEd-xH-p8x">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Succeeded" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEd-xH-p8x">
                                         <rect key="frame" x="0.0" y="0.0" width="86.5" height="18.5"/>
                                         <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3M-Ja-yub">
-                                        <rect key="frame" x="109.5" y="0.0" width="48.5" height="18.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3M-Ja-yub">
+                                        <rect key="frame" x="106.5" y="0.0" width="48.5" height="18.5"/>
                                         <fontDescription key="fontDescription" name="CourierNewPS-BoldItalicMT" family="Courier New" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skipped" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfE-Yr-fV8">
-                                        <rect key="frame" x="181" y="0.0" width="67.5" height="18.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Skipped" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfE-Yr-fV8">
+                                        <rect key="frame" x="175" y="0.0" width="67.5" height="18.5"/>
                                         <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KdN-uS-kDJ">
-                                        <rect key="frame" x="271.5" y="0.0" width="48.5" height="18.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KdN-uS-kDJ">
+                                        <rect key="frame" x="262.5" y="0.0" width="37.5" height="18.5"/>
                                         <fontDescription key="fontDescription" name="CourierNewPS-BoldItalicMT" family="Courier New" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="KoK-lb-lec"/>
+                                    <constraint firstAttribute="width" constant="300" id="Tog-26-lyg"/>
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9c-1p-UbT" customClass="DesignableLabel" customModule="Make24" customModuleProvider="target">
-                                <rect key="frame" x="40" y="243" width="295" height="40"/>
+                                <rect key="frame" x="35" y="243" width="300" height="40"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="1YI-Xi-Qn6"/>
                                     <constraint firstAttribute="height" constant="40" id="zzJ-qX-rOW" userLabel="height = 100"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -121,10 +122,10 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Srz-eP-DXv">
-                                <rect key="frame" x="15" y="453" width="320" height="50"/>
+                                <rect key="frame" x="35" y="453" width="300" height="50"/>
                                 <subviews>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWU-WD-rZB" customClass="DesignableButton" customModule="Make24" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="72.5" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="67.5" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <state key="normal" title="+">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -154,7 +155,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIx-7j-NA7" customClass="DesignableButton" customModule="Make24" customModuleProvider="target">
-                                        <rect key="frame" x="82.5" y="0.0" width="72.5" height="50"/>
+                                        <rect key="frame" x="77.5" y="0.0" width="67.5" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="39"/>
                                         <state key="normal" title="-">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -183,8 +184,8 @@
                                             <action selector="operatorButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wDE-UB-l73"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="7" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9j-RI-JId" customClass="DesignableButton" customModule="Make24" customModuleProvider="target">
-                                        <rect key="frame" x="165" y="0.0" width="72.5" height="50"/>
+                                    <button opaque="NO" tag="7" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9j-RI-JId" customClass="DesignableButton" customModule="Make24" customModuleProvider="target">
+                                        <rect key="frame" x="155" y="0.0" width="67.5" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                         <state key="normal" title="*">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -214,7 +215,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n6O-fu-EvK" customClass="DesignableButton" customModule="Make24" customModuleProvider="target">
-                                        <rect key="frame" x="247.5" y="0.0" width="72.5" height="50"/>
+                                        <rect key="frame" x="232.5" y="0.0" width="67.5" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="/">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -245,15 +246,15 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="1hp-pT-C81"/>
+                                    <constraint firstAttribute="width" constant="300" id="diC-gs-0fd"/>
                                     <constraint firstAttribute="height" constant="50" id="hi8-Ri-9EK"/>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fm4-tM-IBB">
-                                <rect key="frame" x="15" y="543" width="320" height="50"/>
+                                <rect key="frame" x="35" y="543" width="300" height="50"/>
                                 <subviews>
                                     <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zDv-Hq-wba" customClass="DesignableButton" customModule="Make24" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="72.5" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="67.5" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                         <state key="normal" title="(">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -283,7 +284,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEi-nf-I4o" customClass="DesignableButton" customModule="Make24" customModuleProvider="target">
-                                        <rect key="frame" x="82.5" y="0.0" width="72.5" height="50"/>
+                                        <rect key="frame" x="77.5" y="0.0" width="67.5" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                         <state key="normal" title=")">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -313,7 +314,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bw7-nw-ylI" customClass="DesignableButton" customModule="Make24" customModuleProvider="target">
-                                        <rect key="frame" x="165" y="0.0" width="72.5" height="50"/>
+                                        <rect key="frame" x="155" y="0.0" width="67.5" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" image="back">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -343,7 +344,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Xf-1O-K2q" customClass="DesignableButton" customModule="Make24" customModuleProvider="target">
-                                        <rect key="frame" x="247.5" y="0.0" width="72.5" height="50"/>
+                                        <rect key="frame" x="232.5" y="0.0" width="67.5" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Done">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -375,14 +376,14 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="3Jm-O0-ApW"/>
-                                    <constraint firstAttribute="width" constant="320" id="CQE-gY-FlN" userLabel="width = 320"/>
+                                    <constraint firstAttribute="width" constant="300" id="w95-F9-Chb"/>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="F6i-KX-Zuk">
-                                <rect key="frame" x="15" y="363" width="320" height="50"/>
+                                <rect key="frame" x="35" y="363" width="300" height="50"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G8b-fE-Ufa" customClass="DesignableButton" customModule="Make24" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="72.5" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="67.5" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -409,7 +410,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AcK-hL-zuY" customClass="DesignableButton" customModule="Make24" customModuleProvider="target">
-                                        <rect key="frame" x="82.5" y="0.0" width="72.5" height="50"/>
+                                        <rect key="frame" x="77.5" y="0.0" width="67.5" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -427,7 +428,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZ3-2o-Cdj" customClass="DesignableButton" customModule="Make24" customModuleProvider="target">
-                                        <rect key="frame" x="165" y="0.0" width="72.5" height="50"/>
+                                        <rect key="frame" x="155" y="0.0" width="67.5" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -445,7 +446,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUM-n6-gy1" customClass="DesignableButton" customModule="Make24" customModuleProvider="target">
-                                        <rect key="frame" x="247.5" y="0.0" width="72.5" height="50"/>
+                                        <rect key="frame" x="232.5" y="0.0" width="67.5" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -465,7 +466,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="43G-il-tdJ"/>
-                                    <constraint firstAttribute="width" constant="320" id="6pr-pd-BZ2"/>
+                                    <constraint firstAttribute="width" constant="300" id="swx-Tl-h5y"/>
                                 </constraints>
                             </stackView>
                             <view opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SJJ-Xu-9QL">
@@ -515,7 +516,6 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rHT-Ts-HWw" secondAttribute="trailing" constant="40" id="bQK-Hd-2F6"/>
                             <constraint firstItem="Srz-eP-DXv" firstAttribute="top" secondItem="F6i-KX-Zuk" secondAttribute="bottom" constant="40" id="gJz-QY-Eg9"/>
                             <constraint firstItem="d9c-1p-UbT" firstAttribute="top" secondItem="XBb-KK-qmS" secondAttribute="bottom" constant="60" id="oMq-ei-ACQ"/>
-                            <constraint firstItem="d9c-1p-UbT" firstAttribute="leading" secondItem="SJJ-Xu-9QL" secondAttribute="trailing" constant="40" id="peT-OL-rEp"/>
                             <constraint firstItem="rHT-Ts-HWw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="tKs-30-OlF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fm4-tM-IBB" secondAttribute="trailing" constant="40" id="xyw-pc-hSw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="F6i-KX-Zuk" secondAttribute="trailing" constant="40" id="ysn-US-i2w"/>
