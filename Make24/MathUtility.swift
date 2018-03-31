@@ -89,42 +89,42 @@ func evalThree(a:Double, x:Character, b:Double)->Double {
 }
 
 func checkValid(expression: String) -> Bool {
-    if (Int(expression.count)<=7) {return false}
+    if (Int(expression.count)<7) {return false}
     
     if(expression[expression.startIndex] == "-" || expression[expression.startIndex] == "+" || expression[expression.startIndex] == "*" || expression[expression.startIndex] == "/"
         || expression[expression.startIndex] == ")") {return false}
     
     var isLeftPar = false
     var isLeftOp = false
-    var lastNumIndex = false
+    var lastNum = false
     var parCount = 0
     
     for index in expression.indices {
         let current = expression[index]
         if (current == "(") {
             parCount += 1
-            if isLeftPar {return false}
-            if (lastNumIndex) {return false}
+            if (isLeftPar && expression[expression.index(before:index)]==")") {return false}
+            if (lastNum) {return false}
             isLeftOp = false
             isLeftPar = true
-            lastNumIndex = false
+            lastNum = false
         } else if (current == ")") {
             if (parCount == 0) {return false}
             else { parCount -= 1}
-            if (isLeftPar || isLeftOp) {return false}
+            if (isLeftOp || isLeftPar && expression[expression.index(before:index)]=="(") {return false}
             isLeftPar = true
             isLeftOp = false
-            lastNumIndex = false
+            lastNum = false
         } else if (current == "-" || current == "+" || current == "*" || current == "/") {
             if (isLeftOp) {return false}
             if (isLeftPar && expression[expression.index(before:index)]=="(") {return false}
             isLeftOp = true
             isLeftPar = false
-            lastNumIndex = false
+            lastNum = false
         } else {
-            if (lastNumIndex) {return false}
+            if (lastNum) {return false}
             if (isLeftPar && expression[expression.index(before:index)]==")") {return false}
-            lastNumIndex = true
+            lastNum = true
             isLeftOp = false
             isLeftPar = false
         }

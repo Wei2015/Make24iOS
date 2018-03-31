@@ -46,19 +46,12 @@ class ViewController: UIViewController {
         selectedNumButton.append(thirdNum)
         selectedNumButton.append(fourthNum)
         
-        //disable doneButton
-        doneButton.isEnabled = false
-        
-        //set textField as empty string
-        textField.text = ""
         
         //generate four random numbers
         generateFourNumbers()
+        //empty textField and set counts and timer
+        setUp()
         updateCounts(f: failureCount, s: successCount, a: attemptCount)
-        
-        //start timer
-        startTimer()
-        
     
     }
     
@@ -66,7 +59,12 @@ class ViewController: UIViewController {
         time = 0
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(ViewController.timerResult), userInfo: nil, repeats: true)
     }
-    
+    private func setUp() -> Void {
+        textField.text = ""
+        attemptCount = 1
+        doneButton.isEnabled = false
+        startTimer()
+    }
     
     @objc func timerResult() {
         time += 1
@@ -85,7 +83,6 @@ class ViewController: UIViewController {
 
     @IBAction func slideWindow(_ sender: UIBarButtonItem) {
         sliding()
-      
     }
     
     private func sliding() {
@@ -155,13 +152,11 @@ class ViewController: UIViewController {
     }
     //action method for skip icon in Action Bar
     @IBAction func skipPuzzle(_ sender: UIBarButtonItem) {
-        //reset the timer
-        startTimer()
-        
         //reassign new 4 random numbers
         generateFourNumbers()
         
-        //update failureCount
+        //set up other timer, counts, empty textField
+        setUp()
         failureCount += 1
         updateCounts(f: failureCount, s: successCount, a: attemptCount)
     }
@@ -175,12 +170,8 @@ class ViewController: UIViewController {
             selectedNumButton[i].setTitle(String(random[i]), for: .normal)
             selectedNumButton[i].isEnabled = true
         }
-        textField.text = ""
-        attemptCount = 1
-        doneButton.isEnabled = false
-        startTimer()
     }
-   
+    //action method for Done button
     @IBAction func calculate(_ sender: UIButton) ->Void {
         let expression = textField.text
         attemptCount += 1
@@ -191,24 +182,25 @@ class ViewController: UIViewController {
             }
             if (bingo(x: result)){
                 successCount += 1
-                attemptCount = 1
-                textField.text = ""
-                startTimer()
                 //show alert: "Bingo" + expression + "= 24"
                 let alert = UIAlertController(title:nil, message:"Bingo! \(expression!) = 24 ", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title:"Next Puzzle", style: .default, handler: { action in self.generateFourNumbers()}))
+                alert.addAction(UIAlertAction(title:"Next Puzzle", style: .default, handler: { action in
+                    self.generateFourNumbers()
+                    self.setUp()
+                }))
                 self.present(alert, animated: true)
                 }
         }else {
             print("try again")
             //show snackbar (alert) for "please try again"
             let alert = UIAlertController(title:nil, message:"Incorrect. Please try again!", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Try Again", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Try Again", style: .cancel, handler: { action in
+                self.attemptCount += 1
+                self.doneButton.isEnabled = false
+            }))
             self.present(alert, animated: true)
         }
-        doneButton.isEnabled = false
         updateCounts(f: failureCount, s: successCount, a: attemptCount)
-        
     }
     
     @IBAction func showAnswer(_ sender: UIButton) {
@@ -227,6 +219,7 @@ class ViewController: UIViewController {
         alert.addAction(UIAlertAction(title:"Next Puzzle", style: .default, handler: { action in
             
                     self.generateFourNumbers()
+                    self.setUp()
                     self.failureCount += 1
                     self.updateCounts(f: self.failureCount, s: self.successCount, a: self.attemptCount)
             
@@ -244,6 +237,21 @@ class ViewController: UIViewController {
         successLabel.text = String(s)
         failedLabel.text = String(f)
         attemptLabel.text = String(a)
+    }
+    
+    //unwind segue
+    @IBAction func unWindAction(_ segue: UIStoryboardSegue) {
+        if let origin = segue.source as? PickerViewController {
+            let data = origin.data
+            for i in 0..<4 {
+                selectedNumButton[i].setTitle(data[i], for: .normal)
+                selectedNumButton[i].isEnabled = true
+            }
+            failureCount += 1
+            setUp()
+            updateCounts(f: failureCount, s: successCount, a: attemptCount)
+            sliding()
+        }
     }
 }
 
