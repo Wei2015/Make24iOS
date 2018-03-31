@@ -92,9 +92,8 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9c-1p-UbT" customClass="DesignableLabel" customModule="Make24" customModuleProvider="target">
-                                <rect key="frame" x="15" y="243" width="320" height="40"/>
+                                <rect key="frame" x="40" y="243" width="295" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="TSi-7M-gJt"/>
                                     <constraint firstAttribute="height" constant="40" id="zzJ-qX-rOW" userLabel="height = 100"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -516,6 +515,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rHT-Ts-HWw" secondAttribute="trailing" constant="40" id="bQK-Hd-2F6"/>
                             <constraint firstItem="Srz-eP-DXv" firstAttribute="top" secondItem="F6i-KX-Zuk" secondAttribute="bottom" constant="40" id="gJz-QY-Eg9"/>
                             <constraint firstItem="d9c-1p-UbT" firstAttribute="top" secondItem="XBb-KK-qmS" secondAttribute="bottom" constant="60" id="oMq-ei-ACQ"/>
+                            <constraint firstItem="d9c-1p-UbT" firstAttribute="leading" secondItem="SJJ-Xu-9QL" secondAttribute="trailing" constant="40" id="peT-OL-rEp"/>
                             <constraint firstItem="rHT-Ts-HWw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="tKs-30-OlF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fm4-tM-IBB" secondAttribute="trailing" constant="40" id="xyw-pc-hSw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="F6i-KX-Zuk" secondAttribute="trailing" constant="40" id="ysn-US-i2w"/>

@@ -31,8 +31,8 @@ class ViewController: UIViewController {
     var attemptCount = 1
     var successCount = 0
     var failureCount = 0
-    
-    var time = 0
+    var timer = Timer()
+    var seconds = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +46,6 @@ class ViewController: UIViewController {
         selectedNumButton.append(thirdNum)
         selectedNumButton.append(fourthNum)
         
-        
         //generate four random numbers
         generateFourNumbers()
         //empty textField and set counts and timer
@@ -56,8 +55,9 @@ class ViewController: UIViewController {
     }
     
     private func startTimer() {
-        time = 0
-        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(ViewController.timerResult), userInfo: nil, repeats: true)
+        seconds = 0
+        timer.invalidate()
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.timerResult), userInfo: nil, repeats: true)
     }
     private func setUp() -> Void {
         textField.text = ""
@@ -67,18 +67,10 @@ class ViewController: UIViewController {
     }
     
     @objc func timerResult() {
-        time += 1
-        let min = (time%3600) / 60
-        let sec = time % 60
-        if (min < 10 && sec < 10) {
-            timerLabel.text = "0\(min):0\(sec)"
-        } else if (sec < 10){
-             timerLabel.text = "\(min):0\(sec)"
-        } else if (min < 10){
-             timerLabel.text = "0\(min):\(sec)"
-        } else {
-             timerLabel.text = "\(min):\(sec)"
-        }
+        seconds += 1
+        let min = seconds / 60 % 60
+        let sec = seconds % 60
+        timerLabel.text = String(format:"%02i:%02i", min, sec)
     }
 
     @IBAction func slideWindow(_ sender: UIBarButtonItem) {
